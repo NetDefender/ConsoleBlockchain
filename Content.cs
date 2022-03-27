@@ -4,14 +4,14 @@ namespace ConsoleBlockchain;
 
 public abstract class Content
 {
-    private object _value;
-    public Content(ValueRepresentationConverter converter)
+    private object? _value;
+    protected Content(ValueRepresentationConverter converter)
     {
         ArgumentNullException.ThrowIfNull(converter, nameof(converter));
         Converter = converter!;
     }
 
-    public object Value
+    public object? Value
     {
         [MethodImpl(MethodImplOptions.AggressiveOptimization | MethodImplOptions.AggressiveInlining)]
         get => _value;
@@ -29,7 +29,7 @@ public abstract class Content
         get;
     }
 
-    public byte[] ValueRepresentation
+    public byte[]? ValueRepresentation
     {
         get;
         private set;

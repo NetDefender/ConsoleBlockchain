@@ -29,4 +29,6 @@ public class BlockChain
         }
         return this;
     }
+
+    public byte[] Hash => _blocks.Count > 0 ? _blocks.Last!.Value.ChainHash : Array.Empty<byte>();
 }

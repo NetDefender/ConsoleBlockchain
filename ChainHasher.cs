@@ -13,7 +13,7 @@ public class ChainHasher
         _salt = salt;
     }
 
-    public byte[] Hash(BlockChain chain)
+    public virtual byte[] Hash(BlockChain chain)
     {
         using SHA512 sha = SHA512.Create();
         foreach (Block block in chain.Blocks)

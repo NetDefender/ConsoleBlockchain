@@ -5,7 +5,7 @@ namespace ConsoleBlockchain;
 
 public class BlockHasher
 {
-    public byte[] Hash(Block block)
+    public virtual byte[] Hash(Block block)
     {
         using SHA512 sha = SHA512.Create();
         HashAppend(sha, block.Id);
@@ -22,6 +22,6 @@ public class BlockHasher
     private byte[] HashFinalRaw(SHA512 sha, byte[] data)
     {
         sha.TransformFinalBlock(data, 0, data.Length);
-        return sha.Hash;
+        return sha.Hash!;
     }
 }
